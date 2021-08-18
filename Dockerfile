@@ -83,4 +83,12 @@ WORKDIR /usr/local
 RUN gdown https://drive.google.com/uc?id=1eE-_48QxdfWqoR7L2dF45gQ7B1xas4M0 && tar -xvf smearing.tar.gz && rm smearing.tar.gz && mv escudeiro smearing
 RUN ln -s /usr/local/smearing/smearing/tracking_simulated /usr/local/bin/tracking_simulated
 
+WORKDIR /usr/local
+RUN mkdir dbls2k-orig/ && mkdir dbls2k-2targ/
+WORKDIR /usr/local/dbls2k-orig
+RUN gdown https://drive.google.com/uc?id=1Ud1rJgxJrEPt6T28u9p9y_fCUDJ9UPKF && tar -xvf dbls-orig.tar.gz && rm dbls-orig.tar.gz
+WORKDIR /usr/local/dbls2k-2targ
+RUN gdown https://drive.google.com/uc?id=1FNIqmMAGNq6hcQiTlJ9c2ww8F372teZ9 && tar -xvf dbls2k_2targ.tar.gz && rm dbls2k_2targ.tar.gz
+RUN ln -s /usr/local/dbls2k-orig/dbls2k /usr/local/bin/dbls2k-orig && ln -s /usr/local/dbls2k-orig/dechistu /usr/local/bin/dechistu-orig && ln -s /usr/local/dbls2k-orig/histaver40 /usr/local/bin/histaver40-orig && ln -s /usr/local/dbls2k-2targ/dbls2k /usr/local/bin/dbls2k-2targ && ln -s /usr/local/dbls2k-2targ/dechistu /usr/local/bin/dechistu-2targ && ln -s /usr/local/dbls2k-2targ/histaver40 /usr/local/bin/histaver40-2targ
+
 WORKDIR /app
