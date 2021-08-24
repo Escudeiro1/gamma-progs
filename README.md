@@ -2,6 +2,7 @@
 Set of programs for gamma-ray spectroscopy data analysis.
 
 Simplified setup:
+
 1 - Set up docker in your system;
 
 2 - Create a directory to contain your Dockerfile
