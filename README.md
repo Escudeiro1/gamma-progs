@@ -7,23 +7,23 @@ Simplified setup:
 3 - Inside your created directory create a Dockerfile containing only this line:
     FROM escudeiro1/gamma-progs
 4 - alongside with the Dockerfile, you should place an entry point file (saved as entry-point.sh and grant it executable permission) containing:
+    
     #!/bin/bash
     set -e
-
     source /usr/cernroot/root/bin/thisroot.sh
     source /usr/gS/bin/Gw-env.sh
     source /usr/local/geant4.9.6.p04/build/geant4make.sh
-
     exec "$@"
+    
 4 - Then, run: docker build -t <label> .
 5 - Then, in order run the programs inside the container easier, you should add to your .bashrc
 
-export UID
-export PATH=<path/to/your/dockerfile>:$PATH
-export CONTAINER_DIR=<path/to/your/dockerfile>
-  
-alias 4dg8r='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs 4dg8r'
-alias 4play='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs 4play'
+    export UID
+    export PATH=<path/to/your/dockerfile>:$PATH
+    export CONTAINER_DIR=<path/to/your/dockerfile>
+    
+    alias 4dg8r='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs 4dg8r'
+    alias 4play='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs 4play'
 alias Source='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs Source'
 alias adac='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs adac'
 alias addmat='docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $CONTAINER_DIR:/dck -v $(pwd):/app --rm -it --user $(id -u) allprogs addmat'
