@@ -19,8 +19,8 @@ Simplified setup:
     source /usr/local/geant4.9.6.p04/build/geant4make.sh
     exec "$@"
     
-4 - Then, run: docker build -t <label> .
-5 - Then, in order run the programs inside the container easier, you should add to your .bashrc
+5 - Then, run: docker build -t <label> .
+6 - Then, in order run the programs inside the container easier, you should add to your .bashrc
 
     export UID
     export PATH=<path/to/your/dockerfile>:$PATH
