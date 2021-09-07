@@ -1,3 +1,4 @@
+
 FROM asagalo/cernroot-docker:latest
 
 WORKDIR /usr
@@ -90,5 +91,7 @@ RUN gdown https://drive.google.com/uc?id=1Ud1rJgxJrEPt6T28u9p9y_fCUDJ9UPKF && ta
 WORKDIR /usr/local/dbls2k-2targ
 RUN gdown https://drive.google.com/uc?id=1FNIqmMAGNq6hcQiTlJ9c2ww8F372teZ9 && tar -xvf dbls2k_2targ.tar.gz && rm dbls2k_2targ.tar.gz
 RUN ln -s /usr/local/dbls2k-orig/dbls2k /usr/local/bin/dbls2k-orig && ln -s /usr/local/dbls2k-orig/dechistu /usr/local/bin/dechistu-orig && ln -s /usr/local/dbls2k-orig/histaver40 /usr/local/bin/histaver40-orig && ln -s /usr/local/dbls2k-2targ/dbls2k /usr/local/bin/dbls2k-2targ && ln -s /usr/local/dbls2k-2targ/dechistu /usr/local/bin/dechistu-2targ && ln -s /usr/local/dbls2k-2targ/histaver40 /usr/local/bin/histaver40-2targ
+
+RUN gdown https://drive.google.com/uc?id=1TLnjR4eAVgTjL2ozdEuQM1B-GymaisRq && mv stopp.cdi /usr/local/bin
 
 WORKDIR /app
